@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZ Salud y Estética | Dra. M. Soledad Zanetto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de colores personalizados de Tailwind para el tema Turquesa
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-ocean': '#083344', /* Azul verdoso muy oscuro para textos */
+                        'turquoise': '#0d9488',  /* Turquesa principal */
+                        'aqua': '#2dd4bf',       /* Turquesa claro para brillos */
+                        'sea-light': '#ccfbf1'   /* Fondo verde agua muy suave */
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.92);
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #083344;
+            scroll-behavior: smooth;
+            background-color: #e0f2fe;
+            /* Fondo fotográfico realista (Océano, corales, estrella de mar) con efecto marca de agua */
+            background-image: linear-gradient(rgba(224, 242, 254, 0.85), rgba(224, 242, 254, 0.85)), url('https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 10px 40px rgba(13, 148, 136, 0.1);
+        }
+        .btn-primary {
+            background-color: #083344;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(8, 51, 68, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        .service-card {
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #0d9488;
+            box-shadow: 0 15px 30px rgba(13, 148, 136, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5492215403248" target="_blank" class="whatsapp-float">
+        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.847 1.706 5.461l-.957 3.497 3.74-.98z"/></svg>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass-panel">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="serif text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <span class="text-deep-ocean">SZ</span>
+                <span class="text-[10px] font-semibold uppercase tracking-[0.3em] text-turquoise border-l pl-3 ml-1 border-turquoise/30">Salud & Estética</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-deep-ocean/70">
+                <a href="#inicio" class="hover:text-turquoise transition">Inicio</a>
+                <a href="#servicios" class="hover:text-turquoise transition">Servicios</a>
+                <a href="#tecnologia" class="hover:text-turquoise transition">Fraxface</a>
+                <a href="#sedes" class="hover:text-turquoise transition">Sedes</a>
+            </div>
+            <!-- Botón Consulta vinculado a WhatsApp -->
+            <a href="https://wa.me/5492215403248?text=Hola%20Dra.%20Zanetto,%20quisiera%20agendar%20una%20consulta." target="_blank" class="btn-primary px-6 py-2 rounded text-[10px] font-bold uppercase tracking-widest">Consulta</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-16 pb-24 lg:pt-32">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="glass-panel p-12 lg:p-20 rounded-[40px]">
+                <span class="text-turquoise font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block">Dra. M. Soledad Zanetto • MP 115297</span>
+                <h1 class="text-5xl lg:text-7xl leading-tight text-deep-ocean mb-6 italic">Frescura y salud para tu <span class="text-turquoise">belleza natural.</span></h1>
+                <p class="text-deep-ocean/70 text-lg mb-10 leading-relaxed">Cuidado integral de tu piel, tanto estética como médicamente, para diagnósticos precisos y resultados duraderos y luminosos.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#servicios" class="btn-primary px-10 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="hidden lg:flex justify-center">
+                <div class="relative w-96 h-96 flex items-center justify-center">
+                    <div class="absolute inset-0 border-4 border-turquoise/20 rounded-full"></div>
+                    <div class="serif text-[180px] text-turquoise/10 font-bold">SZ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Servicios Completa y Explicada -->
+    <section id="servicios" class="py-24 bg-white/40">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl mb-4 italic text-deep-ocean">Nuestros Tratamientos</h2>
+                <div class="w-20 h-1 bg-turquoise mx-auto mb-4"></div>
+                <p class="text-turquoise uppercase tracking-widest text-[10px] font-bold">Abordaje Integral, Seguro y de Vanguardia</p>
+            </div>
+
+            <!-- Dermatología Clínica -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-turquoise/30"></div>
+                    <h3 class="serif text-3xl text-deep-ocean italic font-bold text-center px-4">Dermatología Clínica</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-turquoise/30"></div>
+                </div>
+                <p class="text-center text-deep-ocean/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Cuidado de tu piel con enfoque médico y estético. Realizamos diagnósticos precisos para abordar los diferentes tipos de lesiones y patologías cutáneas con los más altos estándares de bioseguridad.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-turquoise">Tratamiento Farmacológico</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Abordaje médico personalizado mediante la prescripción de fórmulas específicas para resolver patologías cutáneas desde su origen clínico.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-turquoise">Dermatoscopía</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Estudio minucioso de lesiones pigmentadas y lunares mediante magnificación óptica, esencial para el diagnóstico temprano y prevención del cáncer de piel.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-turquoise">Electrocoagulación</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Procedimiento de alta precisión que utiliza corriente eléctrica controlada para tratar y eliminar pequeñas anomalías benignas superficiales de forma rápida.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-turquoise">Excéresis de Lesiones</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Retiro quirúrgico ambulatorio de formaciones cutáneas sospechosas o inestéticas, priorizando siempre la salud, seguridad y resultados estéticos impecables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estética Avanzada -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-turquoise/30"></div>
+                    <h3 class="serif text-3xl text-deep-ocean italic font-bold text-center px-4">Medicina Estética</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-turquoise/30"></div>
+                </div>
+                <p class="text-center text-deep-ocean/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Procedimientos mínimamente invasivos diseñados para realzar tu belleza, restaurar la vitalidad y devolverle a tu rostro la luminosidad que lo caracteriza.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-deep-ocean">Toxina Botulínica (Botox)</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Relajación neuromuscular selectiva que suaviza las líneas de expresión dinámicas. Logra un rostro descansado, armónico y rejuvenecido sin perder jamás la naturalidad.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-deep-ocean">Fillers (Rellenos)</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Aplicación estratégica de Ácido Hialurónico para reestructurar el volumen facial perdido, perfilar labios y lograr una armonización e hidratación profunda.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-deep-ocean">Plasma Rico en Plaquetas</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Terapia de bioestimulación celular que utiliza tus propios factores de crecimiento para regenerar los tejidos desde el interior, aportando firmeza y luminosidad extrema.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card">
+                        <h4 class="text-lg font-bold mb-3 text-deep-ocean">Peeling Médico</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Exfoliación química controlada que promueve la renovación celular acelerada. Es ideal para atenuar manchas, marcas y mejorar significativamente la textura global de la piel.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl service-card lg:col-span-2">
+                        <h4 class="text-lg font-bold mb-3 text-deep-ocean">Microneedling (Dermapen)</h4>
+                        <p class="text-[13px] text-deep-ocean/80 leading-relaxed">Innovadora terapia de inducción de colágeno mediante microagujas que infunden principios activos directamente en la dermis. Aumenta la firmeza estructural, reduce poros dilatados, atenúa cicatrices y líneas finas, logrando el codiciado efecto "piel de porcelana".</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aparatología y Tecnología -->
+            <div>
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-turquoise/30"></div>
+                    <h3 class="serif text-3xl text-deep-ocean italic font-bold text-center px-4">Alta Tecnología</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-turquoise/30"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-10 rounded-3xl service-card border-l-4 border-l-deep-ocean">
+                        <h4 class="text-2xl font-bold mb-4 italic text-deep-ocean">HIFU 12D</h4>
+                        <p class="text-sm text-deep-ocean/80 leading-relaxed mb-4">
+                            Ultrasonido focalizado de alta intensidad de última generación. Actúa en las capas más profundas de la piel, provocando una contracción térmica que estimula vigorosamente la producción de nuevo colágeno.
+                        </p>
+                        <p class="text-sm text-deep-ocean/80 leading-relaxed">
+                            El resultado es un <strong>efecto lifting no quirúrgico</strong>, redefiniendo el óvalo facial y combatiendo intensamente la flacidez con máxima precisión clínica.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-10 rounded-3xl service-card border-l-4 border-l-turquoise">
+                        <h4 class="text-2xl font-bold mb-4 italic text-turquoise">Luz Pulsada Intensa (IPL)</h4>
+                        <p class="text-sm text-deep-ocean/80 leading-relaxed mb-4">
+                            Plataforma de fotorrejuvenecimiento médico avanzado. Emite pulsos de luz que son absorbidos selectivamente por alteraciones en la piel como la melanina (manchas) y la hemoglobina (vasos sanguíneos).
+                        </p>
+                        <p class="text-sm text-deep-ocean/80 leading-relaxed">
+                            Permite eliminar de forma segura manchas solares, unificar el tono cutáneo, tratar el enrojecimiento (rosácea) y devolverle a tu piel una textura sedosa y uniforme.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Fraxface -->
+    <section id="tecnologia" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="glass-panel rounded-[50px] overflow-hidden flex flex-col lg:flex-row shadow-2xl border-turquoise/30">
+                <div class="lg:w-1/2 p-12 lg:p-24 bg-deep-ocean text-white">
+                    <span class="text-aqua font-bold tracking-[0.3em] text-xs uppercase mb-6 block">Tecnología Premium</span>
+                    <h2 class="text-5xl lg:text-6xl mb-8 italic">Fraxface</h2>
+                    <p class="text-sea-light/80 mb-12 text-lg leading-relaxed">Radiofrecuencia fraccionada bipolar que genera colágeno y elastina de manera natural y efectiva.</p>
+                    <div class="space-y-4">
+                        <p class="text-aqua font-bold uppercase tracking-widest text-[10px]">Beneficios comprobados:</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-medium">
+                            <li class="flex items-center gap-3"><span class="text-aqua text-xl">✓</span> Reduce Arrugas</li>
+                            <li class="flex items-center gap-3"><span class="text-aqua text-xl">✓</span> Cicatrices y Acné</li>
+                            <li class="flex items-center gap-3"><span class="text-aqua text-xl">✓</span> Estrías</li>
+                            <li class="flex items-center gap-3"><span class="text-aqua text-xl">✓</span> Combate la Flacidez</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 p-12 lg:p-24 flex items-center justify-center bg-white/80">
+                    <div class="text-center">
+                        <div class="serif text-9xl text-turquoise/10 font-bold mb-4">REGEN</div>
+                        <p class="text-turquoise font-bold uppercase tracking-[0.4em] text-[10px] mb-10">Lifting sin cirugía</p>
+                        <a href="https://wa.me/5492215403248?text=Hola%20Dra.%20Zanetto,%20quisiera%20consultar%20por%20el%20tratamiento%20Fraxface%20(Lifting%20sin%20cirugía)." target="_blank" class="btn-primary px-12 py-5 rounded-full text-[10px] font-bold tracking-widest uppercase">Consultar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sedes -->
+    <section id="sedes" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl text-center mb-16 italic text-deep-ocean">Nuestras Sedes</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="glass-panel p-12 rounded-3xl text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-deep-ocean uppercase tracking-tighter">La Plata</h3>
+                    <p class="text-deep-ocean/70 mb-2">Calle 64 e/ 7 y 8 N° 638 1/2</p>
+                    <p class="text-turquoise font-bold text-xs tracking-widest uppercase mb-6">221-6248678</p>
+                    <a href="https://wa.me/5492216248678?text=Hola,%20quisiera%20agendar%20un%20turno%20para%20la%20sede%20La%20Plata." target="_blank" class="text-deep-ocean border-b-2 border-deep-ocean/10 pb-1 font-bold text-[10px] hover:border-turquoise hover:text-turquoise transition uppercase">Agendar Turno</a>
+                </div>
+                <div class="glass-panel p-12 rounded-3xl text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-deep-ocean uppercase tracking-tighter">Mar del Plata</h3>
+                    <p class="text-deep-ocean/70 mb-2">Calle Olavarria 2838 2°A</p>
+                    <p class="text-turquoise font-bold text-xs tracking-widest uppercase mb-6">223-6355032</p>
+                    <a href="https://wa.me/5492236355032?text=Hola,%20quisiera%20agendar%20un%20turno%20para%20la%20sede%20Mar%20del%20Plata." target="_blank" class="text-deep-ocean border-b-2 border-deep-ocean/10 pb-1 font-bold text-[10px] hover:border-turquoise hover:text-turquoise transition uppercase">Agendar Turno</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-white border-t border-turquoise/20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="serif text-4xl font-bold text-deep-ocean mb-2">SZ</div>
+            <p class="text-turquoise text-[10px] tracking-[0.5em] uppercase font-bold mb-2">Dra. M. Soledad Zanetto • Médica Especialista</p>
+            <p class="text-deep-ocean/50 text-[10px] tracking-[0.3em] uppercase font-bold mb-10">MP 115297</p>
+            <div class="flex justify-center gap-8 mb-10 text-[10px] font-bold tracking-widest">
+                <a href="https://instagram.com/solezanetto27" target="_blank" class="text-deep-ocean/60 hover:text-turquoise transition">INSTAGRAM</a>
+                <a href="https://wa.me/5492215403248" target="_blank" class="text-deep-ocean/60 hover:text-turquoise transition">WHATSAPP</a>
+            </div>
+            <div class="text-[9px] text-deep-ocean/40 uppercase tracking-[0.2em]">
+                &copy; 2024 SZ Salud y Estética. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
